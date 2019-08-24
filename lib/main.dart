@@ -63,7 +63,54 @@ class _LoginPageState extends State<LoginPage>  with SingleTickerProviderStateMi
           children: <Widget>[
             FlutterLogo(
               size: _iconAnimation.value * 80,
-            )
+            ),
+            Form(
+              child: Theme(
+                data: ThemeData(
+                  brightness: Brightness.dark,
+                  primarySwatch: Colors.teal,
+                  inputDecorationTheme: InputDecorationTheme(
+                    labelStyle: TextStyle(
+                      color: Colors.teal,
+                      fontSize: 20.0,
+                    )
+                  ),
+                ),
+                child: Container(
+                  padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                        ),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                        ),
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                      ),
+                      MaterialButton(
+                        height: 46,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                        color: Colors.teal,
+                        textColor: Colors.white,
+                        child: Icon(Icons.keyboard_arrow_right, size: 36.0,),
+                        splashColor: Colors.teal[200],
+                        onPressed: () => {},
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         )
       ],
